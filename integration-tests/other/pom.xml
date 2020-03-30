@@ -10,6 +10,7 @@
 
     <artifactId>quarkus-universe-integration-tests-other</artifactId>
     <name>Quarkus universe - Integration Tests - Other</name>
+    <version>1.3.1.Final-temporary-redhat-00001</version>
 
     <packaging>pom</packaging>
 
