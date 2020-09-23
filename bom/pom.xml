@@ -3,182 +3,79 @@
     <parent>
         <artifactId>quarkus-universe-parent</artifactId>
         <groupId>io.quarkus</groupId>
-        <version>1.7.3.Final</version>
+        <version>1.7.3.Final-redhat-00011</version>
         <relativePath>..</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>quarkus-universe-bom</artifactId>
+    <groupId>com.redhat.quarkus</groupId>
     <name>Quarkus universe - BOM</name>
     <packaging>pom</packaging>
     <properties>
         <resourcesdir>${project.basedir}/src/main/resources</resourcesdir>
-        <overridesfile>
-            ${resourcesdir}/extensions-overrides.json
-        </overridesfile>
+        <overridesfile>${resourcesdir}/extensions-overrides.json</overridesfile>
     </properties>
     <dependencyManagement>
         <dependencies>
 
             <!-- Quarkus Core BOM -->
             <dependency>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-bom</artifactId>
-                <version>${quarkus.version}</version>
+                <groupId>com.redhat.quarkus</groupId>
+                <artifactId>quarkus-product-bom</artifactId>
+                <version>1.7.3.Final-redhat-00011</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
 
             <!-- Resolve conflicts among platform participants -->
             <dependency>
-                <groupId>io.debezium</groupId>
-                <artifactId>debezium-api</artifactId>
-                <version>${debezium.version}</version>
+                <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-universe-bom</artifactId>
+                <version>1.7.3.Final</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
-            <dependency>
-                <groupId>io.debezium</groupId>
-                <artifactId>debezium-connector-mysql</artifactId>
-                <version>${debezium.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.debezium</groupId>
-                <artifactId>debezium-connector-postgres</artifactId>
-                <version>${debezium.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.debezium</groupId>
-                <artifactId>debezium-connector-sqlserver</artifactId>
-                <version>${debezium.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.debezium</groupId>
-                <artifactId>debezium-core</artifactId>
-                <version>${debezium.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.debezium</groupId>
-                <artifactId>debezium-core</artifactId>
-                <classifier>tests</classifier>
-                <version>${debezium.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.debezium</groupId>
-                <artifactId>debezium-core</artifactId>
-                <type>test-jar</type>
-                <version>${debezium.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.debezium</groupId>
-                <artifactId>debezium-dll-parser</artifactId>
-                <version>${debezium.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.debezium</groupId>
-                <artifactId>debezium-embedded</artifactId>
-                <version>${debezium.version}</version>
-            </dependency>
+            
+            
+            
+            
+            
+            
+            
+            
 
             <!-- universe EXTENSIONS -->
 
             <!-- OptaPlanner -->
-            <dependency>
-                <groupId>org.optaplanner</groupId>
-                <artifactId>optaplanner-bom</artifactId>
-                <version>${optaplanner-quarkus.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
+            
 
             <!-- Kogito -->
-            <dependency>
-                <groupId>org.kie.kogito</groupId>
-                <artifactId>kogito-bom</artifactId>
-                <version>${kogito-quarkus.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
+            
 
             <!-- Qpid JMS -->
-            <dependency>
-                <groupId>org.amqphub.quarkus</groupId>
-                <artifactId>quarkus-qpid-jms-bom</artifactId>
-                <version>${quarkus-qpid-jms.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
+            
 
             <!-- Debezium Outbox Extension -->
-            <dependency>
-                <groupId>io.debezium</groupId>
-                <artifactId>debezium-quarkus-outbox</artifactId>
-                <version>${debezium-quarkus-outbox.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.debezium</groupId>
-                <artifactId>debezium-quarkus-outbox-deployment</artifactId>
-                <version>${debezium-quarkus-outbox.version}</version>
-            </dependency>
+            
+            
 
             <!-- Hazelcast Client -->
-            <dependency>
-                <groupId>com.hazelcast</groupId>
-                <artifactId>quarkus-hazelcast-client-bom</artifactId>
-                <version>${quarkus-hazelcast-client.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.hazelcast</groupId>
-                <artifactId>quarkus-hazelcast-deployment</artifactId>
-                <version>${quarkus-hazelcast-client.version}</version>
-            </dependency>
+            
+            
 
             <!-- Cassandra Client -->
-            <dependency>
-                <groupId>com.datastax.oss.quarkus</groupId>
-                <artifactId>cassandra-quarkus-bom</artifactId>
-                <version>${quarkus-cassandra-client.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.datastax.oss.quarkus</groupId>
-                <artifactId>cassandra-quarkus-bom-deployment</artifactId>
-                <version>${quarkus-cassandra-client.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
+            
+            
 
             <!-- Camel extensions -->
             <!-- This BOM must be the last one as otherwise it will set the dependency versions before the other BOM -->
-            <dependency>
-                <groupId>org.apache.camel.quarkus</groupId>
-                <artifactId>camel-quarkus-bom</artifactId>
-                <version>${camel-quarkus.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
+            
 
             <!-- Blaze-Persistence extension -->
-            <dependency>
-                <groupId>com.blazebit</groupId>
-                <artifactId>blaze-persistence-integration-quarkus</artifactId>
-                <version>${quarkus-blaze-persistence.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.blazebit</groupId>
-                <artifactId>blaze-persistence-entity-view-processor</artifactId>
-                <version>${quarkus-blaze-persistence.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.blazebit</groupId>
-                <artifactId>blaze-persistence-integration-quarkus-deployment</artifactId>
-                <version>${quarkus-blaze-persistence.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.blazebit</groupId>
-                <artifactId>blaze-persistence-integration-hibernate-5.4</artifactId>
-                <version>${quarkus-blaze-persistence.version}</version>
-            </dependency>
+            
+            
+            
+            
 
         </dependencies>
     </dependencyManagement>
@@ -253,7 +150,7 @@
                         <configuration>
                             <file>${basedir}/.flattened-pom.xml</file>
                             <token><![CDATA[<dependency>\s*<groupId>io.quarkus</groupId>\s*<artifactId>quarkus-kogito[^/]*</artifactId>\s*<version>[^<]+</version>\s+</dependency>]]></token>
-                            <value />
+                            <value></value>
                             <regexFlags>
                                 <regexFlag>MULTILINE</regexFlag>
                                 <regexFlag>DOTALL</regexFlag>
@@ -269,7 +166,7 @@
                         <configuration>
                             <file>${basedir}/.flattened-pom.xml</file>
                             <token><![CDATA[<dependency>\s*<groupId>io.quarkus</groupId>\s*<artifactId>quarkus-development-mode</artifactId>\s*<version>[^<]+</version>\s+</dependency>]]></token>
-                            <value />
+                            <value></value>
                             <regexFlags>
                                 <regexFlag>MULTILINE</regexFlag>
                                 <regexFlag>DOTALL</regexFlag>
@@ -285,7 +182,7 @@
                         <configuration>
                             <file>${basedir}/.flattened-pom.xml</file>
                             <token><![CDATA[<dependency>\s*<groupId>io.quarkus</groupId>\s*<artifactId>quarkus-optaplanner[^/]*</artifactId>\s*<version>[^<]+</version>\s+</dependency>]]></token>
-                            <value />
+                            <value></value>
                             <regexFlags>
                                 <regexFlag>MULTILINE</regexFlag>
                                 <regexFlag>DOTALL</regexFlag>
@@ -301,7 +198,7 @@
                         <configuration>
                             <file>${basedir}/.flattened-pom.xml</file>
                             <token><![CDATA[<dependency>\s*<groupId>io.quarkus</groupId>\s*<artifactId>quarkus-test-maven</artifactId>\s*<version>1\.5\.0\.Final</version>\s+</dependency>]]></token>
-                            <value />
+                            <value></value>
                             <regexFlags>
                                 <regexFlag>MULTILINE</regexFlag>
                                 <regexFlag>DOTALL</regexFlag>
@@ -317,7 +214,7 @@
                         <configuration>
                             <file>${basedir}/.flattened-pom.xml</file>
                             <token><![CDATA[<dependency>\s*<groupId>io.quarkus</groupId>\s*<artifactId>quarkus-security-test-utils</artifactId>\s*<version>1\.5\.0\.Final</version>\s+(<scope>test</scope>\s+)?</dependency>]]></token>
-                            <value />
+                            <value></value>
                             <regexFlags>
                                 <regexFlag>MULTILINE</regexFlag>
                                 <regexFlag>DOTALL</regexFlag>
@@ -333,7 +230,7 @@
                         <configuration>
                             <file>${basedir}/.flattened-pom.xml</file>
                             <token><![CDATA[<dependency>\s*<groupId>io.quarkus</groupId>\s*<artifactId>quarkus-vault-spi</artifactId>\s*<version>1\.4\.2\.Final</version>\s+</dependency>]]></token>
-                            <value />
+                            <value></value>
                             <regexFlags>
                                 <regexFlag>MULTILINE</regexFlag>
                                 <regexFlag>DOTALL</regexFlag>
@@ -349,7 +246,7 @@
                         <configuration>
                             <file>${basedir}/.flattened-pom.xml</file>
                             <token><![CDATA[<dependency>\s*<groupId>io.quarkus</groupId>\s*<artifactId>quarkus-funqy-knative</artifactId>\s*<version>1\.4\.2\.Final</version>\s+</dependency>]]></token>
-                            <value />
+                            <value></value>
                             <regexFlags>
                                 <regexFlag>MULTILINE</regexFlag>
                                 <regexFlag>DOTALL</regexFlag>
@@ -365,7 +262,7 @@
                         <configuration>
                             <file>${basedir}/.flattened-pom.xml</file>
                             <token><![CDATA[<dependency>\s*<groupId>io.quarkus</groupId>\s*<artifactId>quarkus-integration-test-[^/]*</artifactId>\s*<version>1\.5\.0\.Final</version>\s+</dependency>]]></token>
-                            <value />
+                            <value></value>
                             <regexFlags>
                                 <regexFlag>MULTILINE</regexFlag>
                                 <regexFlag>DOTALL</regexFlag>
@@ -381,7 +278,7 @@
                         <configuration>
                             <file>${basedir}/.flattened-pom.xml</file>
                             <token><![CDATA[<dependency>\s*<groupId>io.quarkus</groupId>\s*<artifactId>quarkus-bootstrap-core</artifactId>\s*<version>1\.5\.0\.Final</version>\s+<type>test-jar</type>\s+<scope>test</scope>\s+</dependency>]]></token>
-                            <value />
+                            <value></value>
                             <regexFlags>
                                 <regexFlag>MULTILINE</regexFlag>
                                 <regexFlag>DOTALL</regexFlag>
@@ -397,7 +294,7 @@
                         <configuration>
                             <file>${basedir}/.flattened-pom.xml</file>
                             <token><![CDATA[<dependency>\s*<groupId>org.testcontainers</groupId>\s*<artifactId>[^<]+</artifactId>\s*<version>[^<]+</version>(\s+<type>test-jar</type>)?(\s+<scope>test</scope>)?\s+</dependency>]]></token>
-                            <value />
+                            <value></value>
                             <regexFlags>
                                 <regexFlag>MULTILINE</regexFlag>
                                 <regexFlag>DOTALL</regexFlag>
@@ -413,7 +310,7 @@
                         <configuration>
                             <file>${basedir}/.flattened-pom.xml</file>
                             <token><![CDATA[<dependency>\s*<groupId>org.springframework[^<]*</groupId>.*?</dependency>]]></token>
-                            <value />
+                            <value></value>
                             <regexFlags>
                                 <regexFlag>MULTILINE</regexFlag>
                                 <regexFlag>DOTALL</regexFlag>
@@ -463,10 +360,8 @@
         <profile>
             <id>rhproduct</id>
             <properties>
-                <overridesfile>
-                    ${resourcesdir}/extensions-overrides.json,
-                    ${resourcesdir}/extensions-support-overrides.json,
-                </overridesfile>
+                <overridesfile>${resourcesdir}/extensions-overrides.json,
+                    ${resourcesdir}/extensions-support-overrides.json,</overridesfile>
             </properties>
         </profile>
 
