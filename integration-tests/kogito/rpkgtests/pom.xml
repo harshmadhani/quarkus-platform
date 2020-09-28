@@ -4,7 +4,7 @@
     <parent>
         <groupId>io.quarkus</groupId>
         <artifactId>quarkus-universe-integration-tests-kogito-parent</artifactId>
-        <version>1.7.4.Final</version>
+        <version>1.7.4.Final-temporary-redhat-00002</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -18,6 +18,10 @@
             <version>0.13.1</version>
         </dependency>
     </dependencies>
+
+    <properties>
+    <quarkus.version>1.7.4.Final</quarkus.version>
+  </properties>
 
     <build>
         <plugins>

@@ -3,7 +3,7 @@
     <parent>
         <artifactId>quarkus-universe-integration-tests</artifactId>
         <groupId>io.quarkus</groupId>
-        <version>1.7.4.Final</version>
+        <version>1.7.4.Final-temporary-redhat-00002</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -43,6 +43,10 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <properties>
+    <quarkus.version>1.7.4.Final</quarkus.version>
+  </properties>
 
     <build>
         <plugins>
