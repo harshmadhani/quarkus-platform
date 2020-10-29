@@ -3,7 +3,7 @@
     <parent>
         <artifactId>quarkus-universe-parent</artifactId>
         <groupId>io.quarkus</groupId>
-        <version>0.0.1603963576727</version>
+        <version>0.0.1603963576727.temporary-redhat-00001</version>
         <relativePath>../</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -33,9 +33,9 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>io.quarkus</groupId>
+                <groupId>com.redhat.quarkus</groupId>
                 <artifactId>quarkus-universe-bom</artifactId>
-                <version>${project.version}</version>
+                <version>0.0.1603963576727.temporary-redhat-00001</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -63,7 +63,7 @@
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-universe-bom</artifactId>
-            <version>${project.version}</version>
+            <version>0.0.1603963576727.temporary-redhat-00001</version>
             <type>pom</type>
             <exclusions>
                 <exclusion>

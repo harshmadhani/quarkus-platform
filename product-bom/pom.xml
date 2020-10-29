@@ -7,7 +7,7 @@
         <relativePath>..</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>quarkus-universe-bom</artifactId>
+    <artifactId>quarkus-product-bom</artifactId>
     <groupId>com.redhat.quarkus</groupId>
     <name>Quarkus universe - BOM</name>
     <packaging>pom</packaging>
@@ -22,9 +22,9 @@
 
             <!-- Quarkus Core BOM -->
             <dependency>
-                <groupId>com.redhat.quarkus</groupId>
-                <artifactId>quarkus-product-bom</artifactId>
-                <version>0.0.1603963576727.temporary-redhat-00001</version>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>5.7.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -32,12 +32,32 @@
             <!-- Resolve conflicts among platform participants -->
             <dependency>
                 <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-universe-bom</artifactId>
-                <version>0.0.1603963576727</version>
-                <type>pom</type>
-                <scope>import</scope>
+                <artifactId>quarkus-junit5</artifactId>
+                <version>1.9.0.Final</version>
             </dependency>
-            
+            <dependency>
+                <groupId>io.rest-assured</groupId>
+                <artifactId>rest-assured</artifactId>
+                <version>4.3.0</version>
+                <exclusions>
+          <exclusion>
+            <artifactId>activation</artifactId>
+            <groupId>javax.activation</groupId>
+          </exclusion>
+          <exclusion>
+            <artifactId>javax.activation-api</artifactId>
+            <groupId>javax.activation</groupId>
+          </exclusion>
+          <exclusion>
+            <artifactId>jaxb-osgi</artifactId>
+            <groupId>com.sun.xml.bind</groupId>
+          </exclusion>
+          <exclusion>
+            <artifactId>commons-logging</artifactId>
+            <groupId>commons-logging</groupId>
+          </exclusion>
+        </exclusions>
+            </dependency>
             
             
             

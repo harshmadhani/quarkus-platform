@@ -3,7 +3,7 @@
     <parent>
         <groupId>org.jboss</groupId>
         <artifactId>jboss-parent</artifactId>
-        <version>36</version>
+        <version>36.0.0.redhat-00001</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -11,7 +11,7 @@
     <groupId>io.quarkus</groupId>
     <artifactId>quarkus-universe-parent</artifactId>
     <name>Quarkus universe - Parent pom</name>
-    <version>0.0.1603963576727</version>
+    <version>0.0.1603963576727.temporary-redhat-00001</version>
     <packaging>pom</packaging>
     <description>Quarkus universe aggregates extensions from Quarkus Core and those developed by the community into a single compatible and versioned set that application developers can reference from their applications to align the dependency versions</description>
     <url>https://github.com/quarkusio/quarkus-universe</url>
@@ -83,6 +83,7 @@
     <modules>
         <module>bom</module>
         <module>integration-tests</module>
+        <module>product-bom</module>
     </modules>
 
     <distributionManagement>
@@ -243,3 +244,6 @@
     </profiles>
 
 </project>
+<!--
+Modified by POM Manipulation Extension for Maven 4.1 ( SHA: 2574c551 )
+-->
