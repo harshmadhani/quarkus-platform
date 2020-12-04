@@ -3,7 +3,7 @@
     <parent>
         <artifactId>quarkus-universe-integration-tests</artifactId>
         <groupId>io.quarkus</groupId>
-        <version>1.7.5.Final</version>
+        <version>1.7.5.Final-redhat-00012</version>
         <relativePath>../</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -18,7 +18,7 @@
             <dependency>
                 <groupId>io.quarkus</groupId>
                 <artifactId>quarkus-universe-integration-tests-optaplanner-rpkgtests</artifactId>
-                <version>${project.version}</version>
+                <version>1.7.5.Final-redhat-00012</version>
                 <type>pom</type>
             </dependency>
         </dependencies>
