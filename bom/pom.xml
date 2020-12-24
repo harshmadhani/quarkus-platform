@@ -3,11 +3,12 @@
     <parent>
         <artifactId>quarkus-universe-parent</artifactId>
         <groupId>io.quarkus</groupId>
-        <version>1.7.6.Final</version>
+        <version>1.7.6.Final-redhat-00013</version>
         <relativePath>..</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>quarkus-universe-bom</artifactId>
+    <groupId>com.redhat.quarkus</groupId>
     <name>Quarkus universe - BOM</name>
     <packaging>pom</packaging>
     <properties>
@@ -179,6 +180,13 @@
                 <artifactId>blaze-persistence-integration-hibernate-5.4</artifactId>
                 <version>${quarkus-blaze-persistence.version}</version>
             </dependency>
+            <dependency>
+        <groupId>com.redhat.quarkus</groupId>
+        <artifactId>quarkus-product-bom</artifactId>
+        <version>1.7.6.Final-redhat-00013</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
 
         </dependencies>
     </dependencyManagement>
